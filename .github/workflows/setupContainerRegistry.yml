@@ -4,7 +4,7 @@
   uses: Sgitario/setup-container-registry@v1
   with:
     # The host of the container registry that will be launched
-    host: # optional, default is container-registry.org
+    host: container-registry.org # optional, default is container-registry.org
     # The port of the container registry that will be launched
-    port: # optional, default is 5000
+    port: 5000 # optional, default is 5000
           
