@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: first-app-1
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: first-app-1-deploy
+  namespace: first-app-1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: first-app-1
+  template:
+    metadata:
+      labels:
+        app: first-app-1
+    spec:
+      containers:
+        - name: first-app-1
+          image: nginx
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: first-app-1-svc
+  namespace: first-app-1
+  labels:
+    app: first-app-1
+spec:
+  type: ClusterIP
+  selector:
+    app: first-app-1
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80
