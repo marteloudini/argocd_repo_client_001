@@ -9,7 +9,7 @@ metadata:
   name: first-app-1-deploy
   namespace: first-app-1
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: first-app-1
