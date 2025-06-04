@@ -9,7 +9,7 @@ metadata:
   name: first-app-1-deploy
   namespace: first-app-1
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: first-app-1
@@ -23,7 +23,7 @@ spec:
           image: nginx
           resources:
             limits:
-              memory: "128Mi"
+              memory: "100Mi"
               cpu: "500m"
           ports:
             - containerPort: 80
