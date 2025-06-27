@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: first-app-1
-          image: nginx-ingress
+          image: nginx/nginx-ingress:5.0-alpine
           securityContext:
             runAsNonRoot: true
           resources:
